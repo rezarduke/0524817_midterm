@@ -33,8 +33,10 @@ classifier = PassiveAggressiveClassifier(random_state=None)
 #print(classifier.predict(data[0]))
 #print(t[0])
 
-from sklearn import cross_validation
-train, test, t_train, t_test = cross_validation.train_test_split(X, y, test_size=0.4, random_state=0)
+#from sklearn import cross_validation
+#train, test, t_train, t_test = cross_validation.train_test_split(X, y, test_size=0.4, random_state=0)
+from sklearn.model_selection import train_test_split
+train, test, t_train, t_test = train_test_split(X, y, test_size=0.4, random_state=0)
 classifier.fit(train,t_train) # train
 #print(classifier.get_params())
 print(classifier.score(test,t_test)) # test
